@@ -1,0 +1,18 @@
+{% extends 'planner/base.html' %}
+
+{% block content %}
+<div style="max-width: 400px; margin: 4rem auto;">
+    <div class="card">
+        <h2 style="text-align: center;">Join StudySync</h2>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Start planning your success today.</p>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.75rem; font-size: 1rem;">Register</button>
+        </form>
+        <p style="margin-top: 1.5rem; text-align: center; font-size: 0.875rem;">
+            Already have an account? <a href="{% url 'login' %}" style="color: var(--primary); text-decoration: none;">Login here</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
